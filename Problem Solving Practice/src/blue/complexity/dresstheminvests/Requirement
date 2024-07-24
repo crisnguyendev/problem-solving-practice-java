@@ -1,0 +1,25 @@
+Dress'em in Vests!
+The Two-dimensional kingdom is going through hard times... This morning the Three-Dimensional kingdom declared war on the Two-dimensional one. This (possibly armed) conflict will determine the ultimate owner of the straight line.
+The Two-dimensional kingdom has a regular army of 𝑛n people. Each soldier registered himself and indicated the desired size of the bulletproof vest: the 𝑖i-th soldier indicated size 𝑎𝑖ai. The soldiers are known to be unpretentious, so the command staff assumes that the soldiers are comfortable in any vests with sizes from 𝑎𝑖−𝑥ai−x to 𝑎𝑖+𝑦ai+y, inclusive (numbers 𝑥,𝑦≥0x,y≥0 are specified).
+The Two-dimensional kingdom has 𝑚m vests at its disposal, the 𝑗j-th vest's size equals 𝑏𝑗bj. Help mobilize the Two-dimensional kingdom's army: equip with vests as many soldiers as possible. Each vest can be used only once. The 𝑖i-th soldier can put on the 𝑗jth vest, if 𝑎𝑖−𝑥≤𝑏𝑗≤𝑎𝑖+𝑦ai−x≤bj≤ai+y.
+Input Format
+The first input line contains four integers 𝑛,𝑚,𝑥n,m,x and 𝑦y (1≤𝑛,𝑚≤105,0≤𝑥,𝑦≤109)(1≤n,m≤105,0≤x,y≤109) — the number of soldiers, the number of vests and two numbers that specify the soldiers' unpretentiousness, correspondingly.
+The second line contains 𝑛n integers 𝑎1,𝑎2,...,𝑎𝑛a1,a2,...,an (1≤𝑎𝑖≤109)(1≤ai≤109) in non-decreasing order, separated by single spaces — the desired sizes of vests.
+The third line contains 𝑚m integers 𝑏1,𝑏2,...,𝑏𝑚b1,b2,...,bm (1≤𝑏𝑗≤109)(1≤bj≤109) in non-decreasing order, separated by single spaces — the sizes of the available vests.
+Output Format
+In the first line print a single integer 𝑘k — the maximum number of soldiers equipped with bulletproof vests.
+In the next 𝑘k lines print 𝑘k pairs, one pair per line, as "𝑢𝑖ui 𝑣𝑖vi" (without the quotes). Pair (𝑢𝑖,𝑣𝑖)(ui,vi) means that soldier number 𝑢𝑖ui must wear vest number 𝑣𝑖vi. Soldiers and vests are numbered starting from one in the order in which they are specified in the input. All numbers of soldiers in the pairs should be pairwise different, all numbers of vests in the pairs also should be pairwise different. You can print the pairs in any order.
+If there are multiple optimal answers, you are allowed to print any of them.
+Sample test
+inputcopy
+5 3 0 0 1 2 3 3 4 1 3 5
+outputcopy
+2 1 1 3 2
+inputcopy
+3 3 2 2 1 5 9 3 5 7
+outputcopy
+3 1 1 2 2 3 3
+Explanation for sample test
+In the first sample you need the vests' sizes to match perfectly: the first soldier gets the first vest (size 11), the third soldier gets the second vest (size 33). This sample allows another answer, which gives the second vest to the fourth soldier instead of the third one.
+In the second sample the vest size can differ from the desired size by at most 22 sizes, so all soldiers can be equipped.
+
