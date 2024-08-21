@@ -1,15 +1,56 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class Main {
+    static final int max = 1000;
+    static int[] dx = {-1, -1, -1, 0, 0, 1, 1, 1};
+    static int[] dy = {-1, 0, 1, -1, 1, -1, 0, 1};
+    static Scanner sc = new Scanner(System.in);
+    static int n, m, ans;
+    static int[][] visited = new int[max][max];
+    static String[] a = new String[max];
+
+    static int max(int x, int y) {
+        if (x > y) return x;
+        return y;
+    }
+
+    static int dfs(int u, int v) {
+        int s = 0;
+        for (int i = 0; i < 8; i++) {
+            int n_u = u + dx[i];
+            int n_v = v + dy[i];
+            if (n_u >= 0 && n_u < n && n_v >= 0 && n_v < m)
+                if (a[n_u].charAt(n_v) - a[u].charAt(v) == 1) {
+                    if (visited[n_u][n_v] == 0) dfs(n_u, n_v);
+                    s = max(s, visited[n_u][n_v]);
+                }
         }
+        visited[u][v] = s + 1;
+        return visited[u][v];
+    }
+
+    public static void main(String[] args) {
+        int p = 0;
+        while (true) {
+            ans = 0;
+            n = sc.nextInt();
+            m = sc.nextInt();
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < m; j++)
+                    visited[i][j] = 0;
+            if (n * m == 0) break;
+            for (int i = 0; i < n; i++)
+                a[i] = sc.next();
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    if (a[i].charAt(j) == 'A') {
+                        ans = max(ans, dfs(i, j));
+                    }
+                }
+            }
+            p++;
+            System.out.println("Case " + p + ": " + ans);
+        }
+
     }
 }
