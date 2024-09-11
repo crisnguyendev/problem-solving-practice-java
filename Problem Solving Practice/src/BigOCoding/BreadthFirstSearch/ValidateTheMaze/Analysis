@@ -6,9 +6,9 @@ Input:
         - '#': wall
         - '.': space
 - Valid maze:
-    - Only 1 entry point
-    - Only 1 exit point
-    - At least 1 path from entry to exit point
+    - Only 1 entry vertex
+    - Only 1 exit vertex
+    - At least 1 path from entry to exit vertex
 
 Output:
 - The maze is valid or invalid
@@ -27,8 +27,8 @@ valid
 
 Observation:
 - Consider each M[i][j] as a node of graph
-- Entry point or Exit Point: from rear edge: i or j = 0
-- Path from point X to point Y: All spaces without wall.
+- Entry vertex or Exit Point: from rear edge: i or j = 0
+- Path from vertex X to vertex Y: All spaces without wall.
 -
 
 
