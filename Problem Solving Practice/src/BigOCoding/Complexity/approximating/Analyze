@@ -1,6 +1,6 @@
 Input:
-- n  in 2..100 000: number of data points
-- a1, a2, .. an in 1..100 000: sequence of data point
+- n  in 2..100 000: number of data vertices
+- a1, a2, .. an in 1..100 000: sequence of data vertex
 - for each i in 1..n: | a(i +1) - a(i) | <= 1
 - range [l, r] is almost constant range if:
     - M: maximum of ai, i in l..r
@@ -22,9 +22,9 @@ Observation:
 - Maximum length of almost constant range is: n
 - Minimum length of almost constant range is: 2
 - For each ai:
-    - Could be starting point (l) of new almost constant range
+    - Could be starting vertex (l) of new almost constant range
     - Could belong to one of previous almost constant ranges
-    - Could be ending point (l) of previous almost constant ranges
+    - Could be ending vertex (l) of previous almost constant ranges
 - Maximum of distinct number in almost constant range is 2
     - If still keep maximum of distinct number <= 2: extend range
     - When see 3rd distinct number -> Stop almost constant range
