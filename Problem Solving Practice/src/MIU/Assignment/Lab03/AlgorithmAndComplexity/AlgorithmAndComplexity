@@ -1,0 +1,38 @@
+1. O(1) (Constant Time)
+Accessing an array element: Retrieving a value from an array by index.
+Inserting/Deleting at the head of a linked list.
+Hash table operations (average case for search, insert, and delete, assuming no collisions).
+
+2. O(log n) (Logarithmic Time)
+Binary search: Searching for an element in a sorted array.
+Finding an element in a balanced binary search tree (e.g., AVL Tree, Red-Black Tree).
+Heap operations (insert, delete-max/min in a binary heap).
+Exponentiation by squaring.
+
+3. O(n) (Linear Time)
+Linear search: Searching through an unsorted list.
+Finding the maximum/minimum element in an array.
+Counting sort (when the range of input is constant).
+Traversal of a linked list or binary tree.
+
+4. O(n log n) (Linearithmic Time)
+Merge sort: A divide-and-conquer sorting algorithm.
+Heapsort: Sorting algorithm using a binary heap.
+Quicksort (best/average case, depending on pivot selection).
+Balanced binary search tree operations (e.g., AVL Tree insertion).
+
+5. O(n²) (Quadratic Time)
+Bubble sort: Simple sorting algorithm with quadratic complexity.
+Insertion sort: Worst-case performance on reversed lists.
+Selection sort: Another simple sorting algorithm with quadratic complexity.
+Floyd-Warshall algorithm: For all-pairs shortest paths in a graph.
+
+6. O(n³) (Cubic Time)
+Floyd-Warshall algorithm: All-pairs shortest path for dense graphs.
+Dynamic programming algorithms for problems with multiple dimensions, like the 3D version of the knapsack problem.
+
+7. O(2^n) (Exponential Time)
+Solving the Traveling Salesman Problem (TSP) using brute force.
+Recursive solution to the Fibonacci sequence without memoization.
+Solving the subset sum problem using brute force.
+Generating all subsets of a set (e.g., in the power set problem).

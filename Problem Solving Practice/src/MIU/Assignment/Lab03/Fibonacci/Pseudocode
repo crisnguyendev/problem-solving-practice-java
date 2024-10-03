@@ -1,0 +1,13 @@
+Algorithm fib(n)
+Input Non-zero integer n
+Output Fibonacci number n-th
+
+prev <- 1
+result <- 1
+for i <- 0 to n do
+    sum = prev + result
+    prev <- result
+    result <- sum
+return result
+
+Complexity: O(n)
