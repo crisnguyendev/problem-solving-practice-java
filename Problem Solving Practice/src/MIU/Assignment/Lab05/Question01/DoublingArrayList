@@ -1,0 +1,5 @@
+A resize just happened from size 16 to size 32
+Now I can add 16 items
+Cost of adding 16 items: 16
+Cost of resizing: 2k + k = 2 * 16 + 16 = 48
+Amortized cost = 48/16 = 3
