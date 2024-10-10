@@ -1,0 +1,68 @@
+Algorithm FBSSort(array, n)
+Input
+    Array with n element
+Output
+    Elements in the odd locations are sorted in the ascending order.
+    Elements in the even locations are sorted in the descending order.
+    Every element in the even locations are <= every element in the odd locations.
+
+if (n - 1) % 2 = 0 then
+    ascStop <- n - 2
+    desStop <- n - 1
+else
+    ascStop <- n - 1
+    desStop <- n - 2
+quickSortAsc(array, 1, ascStop)
+quickSortDes(array, 0, desStop)
+
+Algorithm quickSortAsc(array, start, stop)
+Input
+    Array in range from start to stop index
+Output
+    Elements in the odd locations are sorted in the ascending order.
+
+pivotPos <- medianOfThree
+swap(array, pivotPos, stop)
+pivot <- array[pivot]
+while true
+    while i <= j && a[i] < pivot do
+        i <- i + 2
+    while i <= j && a[j] > pivot do
+        j <- j - 2
+    if i > j
+        break
+    swap(array, i, j)
+    i <- i + 2
+    j <- j - 2
+swap(array, stop, i)
+quickSortAsc(array, start, i - 2)
+quickSortAsc(array, i + 2, stop)
+
+Algorithm quickSortDes(array, start, stop)
+Input
+    Array in range from start to stop index
+Output
+   Elements in the even locations are sorted in the descending order.
+
+pivotPos <- medianOfThree
+swap(array, pivotPos, stop)
+pivot <- array[pivot]
+while true
+    while i <= j && a[i] > pivot do
+        i <- i + 2
+    while i <= j && a[j] < pivot do
+        j <- j - 2
+    if i > j
+        break
+    swap(array, i, j)
+    i <- i + 2
+    j <- j - 2
+swap(array, stop, i)
+quickSortDes(array, start, i - 2)
+quickSortDes(array, i + 2, stop)
+
+-> O(nlogn)
+
+- Fastest possible running time is nlogn
+
+
