@@ -1,10 +1,10 @@
-package MIU.Assignment.Lab04.SubsetSumProblem;
+package MIU.Assignment.Lab04.SubsetSum;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class SubsetSumProblem {
+public class SubsetSum {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
