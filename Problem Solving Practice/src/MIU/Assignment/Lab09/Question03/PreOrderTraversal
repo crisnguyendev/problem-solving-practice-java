@@ -1,0 +1,4 @@
+Algorithm PreOrderTraversal(bst)
+Input Binary Search Tree bst
+Output PreOrder traversal
+
