@@ -1,4 +1,4 @@
-package BigOCoding.Tree.FindStudentWithHighestScore;
+package BigOCoding.BinarySearchTree.FindStudentWithHighestScore;
 
 import java.util.Scanner;
 

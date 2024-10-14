@@ -1,4 +1,4 @@
-package BigOCoding.Tree.FindTheMinimumElement;
+package BigOCoding.BinarySearchTree.FindTheMinimumElement;
 
 import java.util.Scanner;
 

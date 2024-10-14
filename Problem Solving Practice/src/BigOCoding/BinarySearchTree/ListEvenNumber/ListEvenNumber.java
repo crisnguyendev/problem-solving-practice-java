@@ -1,8 +1,8 @@
-package BigOCoding.Tree.SumOfLeaf;
+package BigOCoding.BinarySearchTree.ListEvenNumber;
 
 import java.util.Scanner;
 
-public class SumOfLeaf {
+public class ListEvenNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
@@ -10,7 +10,7 @@ public class SumOfLeaf {
         for (int i = 1; i <= n; i++) {
             binarySearchTree.add(scanner.nextInt());
         }
-        System.out.println(binarySearchTree.sumOfLeaf());
+        binarySearchTree.printEvenNumberPostOrder();
     }
 }
 
@@ -41,14 +41,18 @@ class Node {
         }
     }
 
-    public int sumOfLeaf() {
-        if (left == null && right == null) {
-            return data;
+    public void printEvenNumberPostOrder() {
+        if (left != null) {
+            left.printEvenNumberPostOrder();
         }
-        int leftSum = left == null ? 0 : left.sumOfLeaf();
-        int rightSum = right == null ? 0 : right.sumOfLeaf();
-        return leftSum + rightSum;
+        if (right != null) {
+            right.printEvenNumberPostOrder();
+        }
+        if (data % 2 == 0) {
+            System.out.printf("%d ", data);
+        }
     }
+
 }
 
 class BinarySearchTree {
@@ -66,11 +70,9 @@ class BinarySearchTree {
         }
     }
 
-    public int sumOfLeaf() {
-        if (root == null) {
-            return 0;
-        } else {
-            return root.sumOfLeaf();
+    public void printEvenNumberPostOrder() {
+        if (root != null) {
+            root.printEvenNumberPostOrder();
         }
     }
 }

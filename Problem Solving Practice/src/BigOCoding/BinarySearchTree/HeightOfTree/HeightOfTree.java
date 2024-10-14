@@ -1,8 +1,8 @@
-package BigOCoding.Tree.ListEvenNumber;
+package BigOCoding.BinarySearchTree.HeightOfTree;
 
 import java.util.Scanner;
 
-public class ListEvenNumber {
+public class HeightOfTree {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
@@ -10,17 +10,18 @@ public class ListEvenNumber {
         for (int i = 1; i <= n; i++) {
             binarySearchTree.add(scanner.nextInt());
         }
-        binarySearchTree.printEvenNumberPostOrder();
     }
 }
 
 class Node {
     int data;
-    Node left, right;
+    Node left;
+    Node right;
 
     public Node(int data) {
         this.data = data;
-        left = right = null;
+        left = null;
+        right = null;
     }
 
     public void add(int value) {
@@ -41,18 +42,11 @@ class Node {
         }
     }
 
-    public void printEvenNumberPostOrder() {
-        if (left != null) {
-            left.printEvenNumberPostOrder();
-        }
-        if (right != null) {
-            right.printEvenNumberPostOrder();
-        }
-        if (data % 2 == 0) {
-            System.out.printf("%d ", data);
-        }
+    public int getHeight() {
+        int leftHeight = left == null ? 0 : left.getHeight();
+        int rightHeight = right == null ? 0 : right.getHeight();
+        return Math.max(leftHeight, rightHeight) + 1;
     }
-
 }
 
 class BinarySearchTree {
@@ -70,9 +64,9 @@ class BinarySearchTree {
         }
     }
 
-    public void printEvenNumberPostOrder() {
-        if (root != null) {
-            root.printEvenNumberPostOrder();
-        }
+    public int getHeight() {
+        return root == null ? 0 : root.getHeight();
     }
+
+
 }
