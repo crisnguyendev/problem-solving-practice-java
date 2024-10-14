@@ -1,4 +1,4 @@
-package BigOCoding.Tree.CountNodeHasTwoChildren;
+package BigOCoding.BinarySearchTree.CountNodeHasTwoChildren;
 
 import java.util.Scanner;
 

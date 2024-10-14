@@ -1,4 +1,4 @@
-package BigOCoding.Tree.PrintIncrementally;
+package BigOCoding.BinarySearchTree.PrintIncrementally;
 
 import java.util.Scanner;
 

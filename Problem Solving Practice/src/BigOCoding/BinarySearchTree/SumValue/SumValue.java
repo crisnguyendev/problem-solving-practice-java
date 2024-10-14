@@ -1,4 +1,4 @@
-package BigOCoding.Tree.SumValue;
+package BigOCoding.BinarySearchTree.SumValue;
 
 import java.util.Scanner;
 
