@@ -1,4 +1,4 @@
-Input:
+# Input:
 - n, m in 1..50: size of map
 - k in 0..50: number of lakes
 - for each n lines:
@@ -8,11 +8,11 @@ Input:
 - Map contains at least k lakes
 - Lake: water cells connected by sides but not connected to ocean
 
-Output:
+# Output:
 - Minimum number of cell should be transformed to land
 - Map after transformation
 
-Example
+# Example
 Input:
 5 4 1
 ****
@@ -29,5 +29,5 @@ Output:
 ****
 ..**
 
-Observation
+# Observation
 -
