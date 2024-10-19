@@ -96,5 +96,6 @@ I   0   0   0   30  0   0   21  19  0
   - findSet(D) != findSet(I)
     - joinSet: {A, B, C, D, E, F, G, H, I}
 - All vertices are visited -> Stop
+- Minimum Spanning Tree: {(C, D), (A, C), (E, F), (H, I), (G, I), (A, B), (E, G), (D, I)}
 ```
 # 5. Time complexity: ElogE (E: number of edges)
