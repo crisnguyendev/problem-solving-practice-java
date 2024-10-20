@@ -22,18 +22,21 @@ public class BFS {
         int component = 0;
         for (int i = 0; i < n; i++) {
             if (!visited[i]) {
-                bfs(i);
                 component++;
+                System.out.println("Component " + component);
+                bfs(i);
+                System.out.println();
             }
         }
-        System.out.println(component);
     }
 
     private static void bfs(int x) {
         Queue<Integer> queue = new LinkedList<>();
         queue.add(x);
+        visited[x] = true;
         while (!queue.isEmpty()) {
             int y = queue.poll();
+            System.out.print((char)(y + 'A') + " ");
             for (int i = 0; i < n; i++) {
                 if (matrix[y][i] > 0 && !visited[i]) {
                     visited[i] = true;
