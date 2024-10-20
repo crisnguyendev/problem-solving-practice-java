@@ -20,19 +20,22 @@ public class DFS {
         }
         int component = 0;
         for (int i = 0; i < n; i++) {
-            if(!visited[i]) {
-                dfs(i);
+            if (!visited[i]) {
                 component++;
+                System.out.println("Component " + component);
+                dfs(i);
+                System.out.println();
             }
         }
-        System.out.println(component);
     }
 
     private static void dfs(int x) {
         Stack<Integer> stack = new Stack<>();
         stack.push(x);
+        visited[x] = true;
         while (!stack.isEmpty()) {
             int y = stack.pop();
+            System.out.print((char)(y + 'A') + " ");
             for (int i = 0; i < n; i++) {
                 if (matrix[y][i] > 0 && !visited[i]) {
                     visited[i] = true;
