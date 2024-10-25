@@ -41,16 +41,23 @@ public class Prayatna {
     private static void dfs(int source) {
         Stack<Integer> stack = new Stack<>();
         stack.push(source);
-        visited[source] = true;
         while (!stack.isEmpty()) {
-            int u = stack.pop();
+            int u = stack.peek();
+            if(!visited[u]) {
+                visited[u] = true;
+            }
+            boolean allChildVisited = true;
             for (int v : graph.get(u)) {
                 if (!visited[v]) {
                     stack.push(v);
                     visited[v] = true;
+                    allChildVisited = false;
+                    break;
                 }
+            }
+            if (allChildVisited) {
+                stack.pop();
             }
         }
     }
-
 }
