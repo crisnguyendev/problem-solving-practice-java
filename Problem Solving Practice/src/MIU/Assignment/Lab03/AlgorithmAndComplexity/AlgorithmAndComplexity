@@ -6,7 +6,7 @@ Hash table operations (average case for search, insert, and delete, assuming no 
 2. O(log n) (Logarithmic Time)
 Binary search: Searching for an element in a sorted array.
 Finding an element in a balanced binary search tree (e.g., AVL Tree, Red-Black Tree).
-Heap operations (insert, delete-max/min in a binary heap).
+Heap operations (insert, delete-max/group in a binary heap).
 Exponentiation by squaring.
 
 3. O(n) (Linear Time)

@@ -1,15 +1,14 @@
 package BigOCoding.DisjointSetUnion.LostAndSurvived;
 
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class LostAndSurvived {
     private static int N;
     private static int[] parent;
     private static int[] rank;
-    private static int[] size;
     private static int maxSize;
-    private static boolean[] visited;
-
+    private static PriorityQueue<Group> groupHeap;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -17,67 +16,86 @@ public class LostAndSurvived {
         makeSet();
         int Q = scanner.nextInt();
         for (int i = 0; i < Q; i++) {
-            int A = scanner.nextInt();
-            int B = scanner.nextInt();
-            if (findSet(A) != findSet(B)) {
-                unionSet(A, B);
+            int x = scanner.nextInt();
+            int y = scanner.nextInt();
+            unionSet(x, y);
+            updateMin();
+            System.out.println(maxSize == N ? 0 : maxSize - groupHeap.peek().rank);
+        }
+    }
+
+    private static void updateMin() {
+        while (!groupHeap.isEmpty()) {
+            Group group = groupHeap.peek();
+            if (findSet(group.root) != group.root) {
+                groupHeap.poll();
+                continue;
             }
-            answerQuery();
+            if (group.rank != rank[group.root]) {
+                groupHeap.poll();
+                continue;
+            }
+            break;
         }
     }
 
     private static void makeSet() {
         parent = new int[N + 1];
         rank = new int[N + 1];
-        size = new int[N + 1];
-        visited = new boolean[N + 1];
+        groupHeap = new PriorityQueue<>();
         for (int i = 1; i <= N; i++) {
             parent[i] = i;
-            rank[i] = 0;
-            size[i] = 1;
+            rank[i] = 1;
+            groupHeap.add(new Group(i, 1));
         }
         maxSize = 1;
     }
 
+
     private static int findSet(int x) {
-        visited[x] = true;
-        if (parent[x] != x) {
+        if (x != parent[x]) {
             parent[x] = findSet(parent[x]);
         }
         return parent[x];
     }
 
-    private static void unionSet(int A, int B) {
-        int rootA = findSet(A);
-        int rootB = findSet(B);
-        if (rootA == rootB) {
+    private static void unionSet(int x, int y) {
+        int rootX = findSet(x);
+        int rootY = findSet(y);
+        if (rootX == rootY) {
             return;
         }
-        if (rank[rootA] > rank[rootB]) {
-            parent[rootA] = rootB;
-        } else if (rank[rootB] > rank[rootA]) {
-            parent[rootB] = rootA;
+        if (rank[rootX] > rank[rootY]) {
+            parent[rootX] = rootY;
+            rank[rootY] += rank[rootX];
+            maxSize = Math.max(maxSize, rank[rootY]);
+            groupHeap.add(new Group(rootY, rank[rootY]));
+        } else if (rank[rootY] > rank[rootX]) {
+            parent[rootY] = rootX;
+            rank[rootX] += rank[rootY];
+            maxSize = Math.max(maxSize, rank[rootX]);
+            groupHeap.add(new Group(rootX, rank[rootX]));
         } else {
-            parent[rootA] = rootB;
-            rank[rootB]++;
+            parent[rootX] = rootY;
+            rank[rootY] += rank[rootX];
+            maxSize = Math.max(maxSize, rank[rootY]);
+            groupHeap.add(new Group(rootY, rank[rootY]));
         }
-        int newSize = size[rootA] + size[rootB];
-        maxSize = Math.max(maxSize, newSize);
-        size[rootA] = newSize;
-        size[rootB] = newSize;
+
+    }
+}
+
+class Group implements Comparable<Group> {
+    int root;
+    int rank;
+
+    Group(int root, int rank) {
+        this.root = root;
+        this.rank = rank;
     }
 
-    private static int getMinSize() {
-        int minSize = N + 1;
-        for (int i = 1; i <= N; i++) {
-            if (visited[i] && size[i] < minSize) {
-                minSize = size[i];
-            }
-        }
-        return minSize <= N ? minSize : 1;
-    }
-
-    private static void answerQuery() {
-        System.out.println(maxSize == N ? 0 : maxSize - getMinSize());
+    @Override
+    public int compareTo(Group group) {
+        return rank - group.rank;
     }
 }
