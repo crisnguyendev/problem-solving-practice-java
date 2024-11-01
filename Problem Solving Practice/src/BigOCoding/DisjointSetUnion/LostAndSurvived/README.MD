@@ -25,4 +25,4 @@ Observation:
     - Check group (parent) of A and B
     - If parent of A != parent of B -> Unite A & B
         -> Size of group of A & B = Size group A + Size group B
-        -> Check and assign max group size & min group size
+        -> Check and assign max group size & group group size
