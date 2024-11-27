@@ -9,6 +9,8 @@ public class MinimumWindowSubstring {
 }
 
 class Solution {
+    // Time complexity: O(m + n)
+    // Space complexity: O(m)
     public String minWindow(String s, String t) {
         int[] freqT = new int[72];
         int[] freqW = new int[72];
