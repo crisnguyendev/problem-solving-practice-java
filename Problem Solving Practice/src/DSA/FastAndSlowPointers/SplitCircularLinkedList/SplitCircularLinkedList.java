@@ -3,27 +3,30 @@ package DSA.FastAndSlowPointers.SplitCircularLinkedList;
 public class SplitCircularLinkedList {
 }
 
-class LinkedListNode {
+class ListNode {
     int val;
-    LinkedListNode next;
+    ListNode next;
 
-    LinkedListNode() {
+    ListNode() {
     }
 
-    LinkedListNode(int val) {
+    ListNode(int val) {
         this.val = val;
     }
 
-    LinkedListNode(int val, LinkedListNode next) {
+    ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }
 }
 
 class Solution {
-    public static LinkedListNode[] splitCircularLinkedList(LinkedListNode head) {
-        LinkedListNode s = head;
-        LinkedListNode f = head;
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
+    ListNode[] splitCircularLinkedList(ListNode head) {
+        ListNode s = head;
+        ListNode f = head;
 
         while (f.next != head && f.next.next != head) {
             s = s.next;
@@ -31,15 +34,15 @@ class Solution {
         }
 
 
-        LinkedListNode secondHead = s.next;
+        ListNode secondHead = s.next;
         s.next = head;
 
-        LinkedListNode temp = secondHead;
+        ListNode temp = secondHead;
         while (temp.next != head) {
             temp = temp.next;
         }
         temp.next = secondHead;
 
-        return new LinkedListNode[]{head, secondHead};
+        return new ListNode[]{head, secondHead};
     }
 }

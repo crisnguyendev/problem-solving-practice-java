@@ -1,8 +1,0 @@
-Algorithm divideToys(toys[], pivot)
-Input array of Blue and Red toys, with length n
-Output all blue toys in left side of array and red toys at the other side
-
-left <- 0
-right <- n - 1
-while left <= right do
-

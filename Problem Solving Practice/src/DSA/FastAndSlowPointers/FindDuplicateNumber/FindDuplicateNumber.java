@@ -5,6 +5,9 @@ public class FindDuplicateNumber {
 }
 
 class Solution {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
     public int findDuplicate(int[] nums) {
         int s = nums[0];
         int f = nums[0];

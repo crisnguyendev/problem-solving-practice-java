@@ -12,7 +12,9 @@ public class StrobogrammaticNumber {
 
 
 class Solution {
-    public static boolean isStrobogrammatic(String num) {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+    boolean isStrobogrammatic(String num) {
         Map<Character, Character> map = new HashMap<>();
         map.put('1', '1');
         map.put('6', '9');

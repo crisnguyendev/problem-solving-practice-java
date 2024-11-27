@@ -10,7 +10,9 @@ public class ValidWordAbbreviation {
 }
 
 class Solution {
-    public static boolean validWordAbbreviation(String word, String abbr) {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+    boolean validWordAbbreviation(String word, String abbr) {
         if (abbr.length() > word.length())
             return false;
         int abbrIndex = 0;

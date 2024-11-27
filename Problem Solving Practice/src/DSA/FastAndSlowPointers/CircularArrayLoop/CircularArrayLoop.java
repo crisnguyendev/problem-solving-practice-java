@@ -4,6 +4,9 @@ public class CircularArrayLoop {
 }
 
 class Solution {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
     public static boolean circularArrayLoop(int[] nums) {
         int size = nums.length;
 

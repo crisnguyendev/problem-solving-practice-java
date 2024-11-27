@@ -7,6 +7,9 @@ public class HappyNumber {
 }
 
 class Solution {
+    // Time complexity: O(log(n))
+    // Space complexity: O(1)
+
     public boolean isHappy(int n) {
         int s = n;
         int f = sumOfSquaredDigits(s);
