@@ -25,6 +25,9 @@ class ListNode {
 }
 
 class Solution {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
     public ListNode middleNode(ListNode head) {
         if (head == null)
             return null;

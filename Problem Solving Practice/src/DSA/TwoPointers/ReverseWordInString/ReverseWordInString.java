@@ -8,6 +8,8 @@ public class ReverseWordInString {
 }
 
 class Solution {
+    // Time complexity: O(n)
+    // Space complexity: O(n)
     private static void reverse(char[] chars, int start, int end) {
         while (start < end) {
             char temp = chars[start];

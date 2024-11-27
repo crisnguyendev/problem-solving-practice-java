@@ -23,6 +23,9 @@ class ListNode {
 }
 
 class Solution {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
     public boolean isPalindrome(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;

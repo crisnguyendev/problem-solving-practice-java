@@ -37,6 +37,9 @@ class ListNode {
 }
 
 class Solution {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode right = head;
         ListNode left = head;

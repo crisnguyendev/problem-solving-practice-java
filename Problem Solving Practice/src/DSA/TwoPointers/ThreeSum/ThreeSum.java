@@ -14,6 +14,9 @@ public class ThreeSum {
 
 class Solution {
 
+    // Time complexity: O(nlog(n)+n^2) = O(n^2)
+    // Space complexity: O(log(n))
+
     public List<List<Integer>> threeSum(int[] nums) {
         int TARGET = 0;
         List<List<Integer>> result = new ArrayList<>();

@@ -4,14 +4,14 @@ public class LowestCommonAncestorBinaryTreeIII {
 }
 
 
-class EduTreeNode {
-    int data;
-    EduTreeNode left;
-    EduTreeNode right;
-    EduTreeNode parent;
+class Node {
+    int val;
+    Node left;
+    Node right;
+    Node parent;
 
-    EduTreeNode(int value) {
-        this.data = value;
+    Node(int value) {
+        this.val = value;
         this.left = null;
         this.right = null;
         this.parent = null;
@@ -19,22 +19,15 @@ class EduTreeNode {
 }
 
 class Solution {
-    public EduTreeNode LowestCommonAncestor(EduTreeNode p, EduTreeNode q) {
-        EduTreeNode p1 = p;
-        EduTreeNode p2 = q;
-        while (p1 != p2) {
-            if (p1.parent != null) {
-                p1 = p1.parent;
-            } else {
-                p1 = q;
-            }
+    // Time complexity: O(h) - h: height of tree
+    // Space complexity: O(1)
 
-            if(p2.parent != null) {
-                p2 = p2.parent;
-            } else {
-                p2 = p;
-            }
+    public Node lowestCommonAncestor(Node p, Node q) {
+        Node temp1 = p, temp2 = q;
+        while(temp1 != temp2) {
+            temp1 = temp1 != null ? temp1.parent: q;
+            temp2 = temp2 != null ? temp2.parent: p;
         }
-        return p1;
+        return temp1;
     }
 }

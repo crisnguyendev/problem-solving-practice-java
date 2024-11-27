@@ -1,68 +1,46 @@
 package DSA.TwoPointers.NextPalindromeUsingSameDigit;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
 
 public class NextPalindromeUsingSameDigit {
     public static void main(String[] args) {
         String numStr = "23143034132";
-        System.out.print(new Solution().findNextPalindrome(numStr));
+        System.out.print(new Solution().nextPalindrome(numStr));
     }
 }
 
 class Solution {
-    public static boolean findNextPermutation(List<Character> digits) {
-        int i = digits.size() - 2;
-        while (i >= 0 && digits.get(i) >= digits.get(i + 1)) {
-            i--;
+    public String nextPalindrome(String num) {
+        int n = num.length();
+        if (n < 3) {
+            return "";
         }
-        if (i == -1) {
-            return false;
-        }
+        char[] chars = num.toCharArray();
 
-        int j = digits.size() - 1;
-        while (digits.get(j) <= digits.get(i)) {
-            j--;
+        int mid = n / 2 - 1;
+        int l = mid;
+        while (l - 1 >= 0 && chars[l - 1] >= chars[l]) {
+            l--;
         }
-
-        Collections.swap(digits, i, j);
-        Collections.reverse(digits.subList(i + 1, digits.size()));
-        return true;
+        if (l == 0) {
+            return "";
+        }
+        while (mid > l && chars[mid] <= chars[l - 1]) {
+            mid--;
+        }
+        swap(chars, mid, l - 1);
+        swap(chars, n - 1 - mid, n - l);
+        mid = n / 2;
+        Arrays.sort(chars, l, mid);
+        for (int i = l; i < mid; i++) {
+            chars[n - 1 - i] = chars[i];
+        }
+        return new String(chars);
     }
 
-    public static String findNextPalindrome(String numStr) {
-        int n = numStr.length();
-
-        if (n == 1) {
-            return "";
-        }
-
-        int halfLength = n / 2;
-        List<Character> leftHalf = new ArrayList<>();
-        for (int i = 0; i < halfLength; i++) {
-            leftHalf.add(numStr.charAt(i));
-        }
-
-        if (!findNextPermutation(leftHalf)) {
-            return "";
-        }
-
-        StringBuilder nextPalindrome = new StringBuilder();
-        for (char c : leftHalf) {
-            nextPalindrome.append(c);
-        }
-
-        if (n % 2 == 0) {
-            nextPalindrome.append(new StringBuilder(nextPalindrome).reverse());
-        } else {
-            nextPalindrome.append(numStr.charAt(halfLength));
-            nextPalindrome.append(new StringBuilder(nextPalindrome.substring(0, halfLength)).reverse());
-        }
-
-        if (nextPalindrome.toString().compareTo(numStr) > 0) {
-            return nextPalindrome.toString();
-        }
-        return "";
+    public void swap(char[] chars, int i, int j) {
+        char temp = chars[i];
+        chars[i] = chars[j];
+        chars[j] = temp;
     }
 }

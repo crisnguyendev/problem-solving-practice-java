@@ -23,6 +23,9 @@ class ListNode {
 }
 
 class Solution {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
     public int pairSum(ListNode head) {
         ListNode s = head;
         ListNode f = head;

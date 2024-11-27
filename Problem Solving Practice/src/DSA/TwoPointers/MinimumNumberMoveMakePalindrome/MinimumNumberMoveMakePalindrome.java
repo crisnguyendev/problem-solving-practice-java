@@ -8,6 +8,8 @@ public class MinimumNumberMoveMakePalindrome {
 }
 
 class Solution {
+    // Time complexity: O(n^2)
+    // Space complexity: O(1)
     public int minMovesToMakePalindrome(String s) {
         char[] chars = s.toCharArray();
         int moves = 0;

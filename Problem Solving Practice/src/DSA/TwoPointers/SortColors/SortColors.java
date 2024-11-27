@@ -11,6 +11,8 @@ public class SortColors {
 }
 
 class Solution {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
     public void sortColors(int[] nums) {
         int left = 0;
         int right = nums.length - 1;

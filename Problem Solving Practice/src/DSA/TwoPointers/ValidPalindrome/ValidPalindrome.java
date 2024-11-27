@@ -8,6 +8,9 @@ public class ValidPalindrome {
 }
 
 class Solution {
+    // Time: O(n/2)
+    // Space: O(1)
+
     public boolean isPalindrome(String s) {
         if (s == null || s.length() <= 1)
             return true;

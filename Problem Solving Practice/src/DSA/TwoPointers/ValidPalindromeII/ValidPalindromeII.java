@@ -8,6 +8,9 @@ public class ValidPalindromeII {
 }
 
 class Solution {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
     public boolean isPalindrome(String string) {
         int left = 0;
         int right = string.length() - 1;
