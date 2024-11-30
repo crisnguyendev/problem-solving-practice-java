@@ -1,4 +1,4 @@
-package LeetCode.Easy.ReverseLinkedList;
+package DSA.LinkedList.ReverseLinkedList;
 
 public class ReverseLinkedList {
     public static void main(String[] args) {
@@ -24,6 +24,9 @@ public class ReverseLinkedList {
 }
 
 class Solution {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
