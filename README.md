@@ -17,9 +17,9 @@ Problems are sourced from platforms like **Codeforces** and **LeetCode**, as wel
 - Sliding Window
 - Two Pointers
 - Fast and Slow Pointers
-- Prefix Sum
 - Sorting Algorithms
 - Searching Algorithms
+- Prefix Sum
 
 ### Linked Lists and Stacks
 - In-place Reversal of a Linked List
@@ -60,5 +60,31 @@ Problems are sourced from platforms like **Codeforces** and **LeetCode**, as wel
 - String Matching Algorithms (KMP, Rabin-Karp, Z-Algorithm)
 - Bit Manipulation Techniques
 
+## 📂 Project Structure
+```
+root/
+  ├── DSA/                        # Practice by topics (Leetcode & Codeforces)
+  │   ├── arrays_and_strings/
+  │   ├── linked_lists_and_stacks/
+  │   ├── trees_and_graphs/
+  │   ├── dynamic_programming/
+  │   ├── greedy_algorithms/
+  │   ├── divide_and_conquer/
+  │   ├── advanced_topics/
+  │   └── utils/
+  ├── Leetcode/                   # Practice by Contests and Study Plans
+  │   ├── contests/
+  │   ├── study_plans/
+  ├── test/
+  │   ├── DSA/
+  │   ├── Leetcode/
+  ├── README.md
+  ├── .gitignore
+  ├── pom.xml
+  ├── build.gradle
+  ├── LICENSE
+```
+
+---
 Feel free to explore the repository and contribute your suggestions or solutions! 🚀
 
