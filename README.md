@@ -49,12 +49,50 @@ This repository is dedicated to improving my problem-solving skills using Java. 
 - Number Theory
 - String Matching Algorithms (KMP, Rabin-Karp, Z-Algorithm)
 
+
 ## 🛠️ Prerequisites
 - **Java Development Kit (JDK)** - Version 8 or later.
 - **IDE** - IntelliJ IDEA, Eclipse, or any Java IDE.
 - Basic knowledge of Java programming.
 - Familiarity with algorithmic concepts and data structures.
 
+## 📂 Folder Structure
+```
+problem-solving-practice/
+├── DSA/                         # Practice by topics (problems from Leetcode and Codeforces)
+│   ├── arrays/
+│   ├── dynamic_programming/
+│   ├── graphs/
+│   ├── recursion/
+│   ├── sliding_window/
+│   ├── sorting_searching/
+│   ├── linked_lists/
+│   ├── trees/
+│   ├── greedy_algorithms/
+│   ├── bit_manipulation/
+│   ├── computational_geometry/
+│   ├── string_algorithms/
+│   ├── number_theory/
+│   └── others/
+│
+├── Leetcode/                     # Practice by Contest and Study Plan List on Leetcode platform
+│   ├── contests/                 # Problems organized by Leetcode contests
+│   │   ├── weekly/
+│   │   ├── biweekly/
+│   │   └── others/
+│   ├── study_plans/              # Problems organized by Leetcode study plans
+│   │   ├── arrays_and_strings/
+│   │   ├── dynamic_programming/
+│   │   ├── graphs/
+│   │   └── recursion/
+│   └── problems/                 # General problems from Leetcode
+│       ├── easy/
+│       ├── medium/
+│       ├── hard/
+│       └── unsolved/
+│
+└── README.md                     # Repository description and instructions
+```
 
 ## 🧑‍💻 How to Use
 1. Clone the repository:
@@ -71,3 +109,5 @@ Contributions are welcome! If you'd like to add new problems or improve existing
 2. Create a new branch for your changes.
 3. Commit your updates with clear commit messages.
 4. Submit a pull request.
+
+
