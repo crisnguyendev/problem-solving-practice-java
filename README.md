@@ -17,6 +17,7 @@ Problems are sourced from platforms like **Codeforces** and **LeetCode**, as wel
 - Sliding Window
 - Two Pointers
 - Fast and Slow Pointers
+- Prefix Sum
 - Sorting Algorithms
 - Searching Algorithms
 
