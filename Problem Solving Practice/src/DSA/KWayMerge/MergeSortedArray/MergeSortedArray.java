@@ -1,4 +1,4 @@
-package LeetCode.Easy.MergeSortedArray;
+package DSA.KWayMerge.MergeSortedArray;
 
 import java.util.Arrays;
 
