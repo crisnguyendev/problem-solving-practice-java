@@ -9,18 +9,22 @@ public class KthSmallestNumberInMSortedList {
 
 class FindSmallestNumber {
     public static int kSmallestNumber(List<List<Integer>> lists, int k) {
-        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[1] == b[1] ? a[0] - b[0] : a[1] - b[1]);
-        int count = 0;
         int n = lists.size();
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[1] == b[1] ? a[0] - b[0] : a[1] - b[1]); // {row, value}
         for (int i = 0; i < n; i++) {
             minHeap.add(new int[]{i, lists.get(i).get(0)});
         }
-        while(count < k ) {
-            int[] top =  minHeap.poll();
-
+        int[] pointers = new int[n];
+        int m = 1;
+        while (!minHeap.isEmpty() && m < k) {
+            int[] top = minHeap.poll();
+            int row = top[0];
+            if (pointers[row] < lists.get(row).size() - 1) {
+                pointers[row]++;
+                minHeap.add(new int[]{row, lists.get(row).get(pointers[row])});
+            }
+            m++;
         }
-        // Replace this placeholder return statement with your code
-
-        return 0;
+        return minHeap.poll()[1];
     }
 }
