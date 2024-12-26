@@ -1,4 +1,4 @@
-package LeetCode.Medium.KClosestPointsToOrigin;
+package DSA.TopKthElements.KClosestPointsToOrigin;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
